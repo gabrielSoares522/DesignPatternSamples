@@ -108,6 +108,7 @@ namespace DesignPatternSamples.WebAPI
                 .AddTransient<DetranSPVerificadorDebitosRepository>()
                 .AddTransient<DetranRJVerificadorDebitosRepository>()
                 .AddTransient<DetranRSVerificadorDebitosRepository>()
+                .AddTransient<DetranBAVerificadorDebitosRepository>()
                 .AddScoped<ExceptionHandlingMiddleware>();
         }
 
@@ -129,7 +130,8 @@ namespace DesignPatternSamples.WebAPI
                 .Register("PE", typeof(DetranPEVerificadorDebitosRepository))
                 .Register("RJ", typeof(DetranRJVerificadorDebitosRepository))
                 .Register("SP", typeof(DetranSPVerificadorDebitosRepository))
-                .Register("RS", typeof(DetranRSVerificadorDebitosRepository));
+                .Register("RS", typeof(DetranRSVerificadorDebitosRepository))
+                .Register("BA", typeof(DetranBAVerificadorDebitosRepository));
 
             return app;
         }
